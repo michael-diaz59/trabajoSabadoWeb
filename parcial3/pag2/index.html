@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+    <!-- BOOTSTRAP 4  -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+  </head>
+  <body>
+
+    <!-- NAVIGATION  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Productos App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <form class="form-inline my-2 my-lg-0">
+            <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row p-4">
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-body">
+              <!-- FORM TO ADD TASKS -->
+              <form id="productos-form">
+                <div class="form-group">
+                  <input type="text" id="nombre" placeholder="nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="number" id="precio" placeholder="precio" class="form-control">
+                </div>
+                <div class="form-group">
+                <input type="number" id="existencia" placeholder="existencia" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="imagen" placeholder="ruta imagen" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="medida" placeholder="medida" class="form-control">
+                </div>
+                <input type="hidden" id="productosId">
+                <button type="submit" class="btn btn-primary btn-block text-center">
+                  Save Task
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- TABLE  -->
+        <div class="col-md-7">
+          <div class="card my-4" id="productos-result">
+            <div class="card-body">
+              <!-- SEARCH -->
+              <ul id="container"></ul>
+            </div>
+          </div>
+
+          <table class="table table-bordered table-sm">
+            <thead>
+              <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>precio</td>
+                <td>existencia</td>
+                <td>medida</td>
+              </tr>
+            </thead>
+            <tbody id="productos"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <!-- Frontend Logic -->
+    <script src="app.js"></script>
+  </body>
+
+</html>
